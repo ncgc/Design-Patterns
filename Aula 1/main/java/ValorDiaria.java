@@ -1,6 +1,6 @@
 public class ValorDiaria implements CalculoValor{
     public final double dia = 86400000;
-    public Veiculo veiculo;
+    public double periodo;
 
     public ValorDiaria(double periodo) {
         this.periodo = periodo;

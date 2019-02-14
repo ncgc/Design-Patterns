@@ -17,14 +17,6 @@ public class ContaEstacionamento {
 
     public void setCalculo(CalculoValor calculoValor){
         double periodo = fim - inicio;
-        if (calculoValor instanceof ValorDiaria) {
-            valorCobrado = new ValorDiaria(periodo).valorConta(periodo, veiculo);
-        }
-        if(calculoValor instanceof ValorHora){
-            valorCobrado = new ValorHora(periodo).valorConta(periodo, veiculo);
-        }
-        if(calculoValor instanceof ValorMensal){
-            valorCobrado = new valorMensal(periodo).valorConta(periodo, veiculo);
-        }
+        valorCobrado = calculoValor.valorConta(periodo, veiculo);
     }
 }
