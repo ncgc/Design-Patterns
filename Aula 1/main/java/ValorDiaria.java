@@ -1,5 +1,5 @@
 public class ValorDiaria implements CalculoValor{
-    public final double dia = 86400000;
+    private final double dia = 86400000;
     public double periodo;
 
     public ValorDiaria(double periodo) {

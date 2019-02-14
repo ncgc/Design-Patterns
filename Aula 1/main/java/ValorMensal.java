@@ -1,5 +1,5 @@
 public class ValorMensal implements CalculoValor{
-    public final double mes = 2592E6;
+    private final double mes = 2592E6;
     public double periodo;
 
     public ValorMensal(double periodo){

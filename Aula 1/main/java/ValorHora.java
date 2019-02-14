@@ -1,5 +1,5 @@
 public class ValorHora implements CalculoValor{ 
-    public final double hora = 3600000;
+    private final double hora = 3600000;
     public double periodo;
 
     public ValorHora(double periodo) {
