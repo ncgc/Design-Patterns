@@ -4,11 +4,10 @@ public class ValorMensal implements CalculoValor{
 
     public ValorMensal(double periodo, double valorMes){
         this.periodo = periodo;
-        this.valorMes = valorMes;
     }
 
-    public double valorConta(){
-        return Math.ceil(periodo/mes) * valorMes;
+    public double valorConta(double periodo, Veiculo veiculo){
+        return Math.ceil(periodo/mes) * veiculo.getValorMensal();
     }
     
 }

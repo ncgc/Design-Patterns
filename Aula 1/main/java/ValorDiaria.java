@@ -1,14 +1,13 @@
 public class ValorDiaria implements CalculoValor{
     public final double dia = 86400000;
-    public double valorDiaria;
+    public Veiculo veiculo;
 
-    public ValorDiaria(double periodo, double valorDiaria) {
+    public ValorDiaria(double periodo) {
         this.periodo = periodo;
-        this.valorDiaria = valorDiaria;
     }
 
-    public double valorConta(){
-        return Math.ceil(periodo/dia) * valorDiaria;
+    public double valorConta(double periodo, Veiculo veiculo){
+        return Math.ceil(periodo/dia) * veiculo.getValorDiaria();
     }
    
 }

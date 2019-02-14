@@ -1,0 +1,9 @@
+<h1> Composição </h1>
+
+Dá flexibilidade do código. 
+Caso algum dia seja necessário alterar a forma de calcular a idade, 
+a classe Pessoa não será afetada. 
+
+Classe atômica(Ex. CalcularTempo): permite que a classe seja reaproveitada. 
+Codificação de um problema pequeno que pode ser utilizado em vários contextos. 
+

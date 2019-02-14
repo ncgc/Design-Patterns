@@ -6,4 +6,5 @@ public class Passeio extends Veiculo{
    public Passeio(){
        super();
    }
+
 }

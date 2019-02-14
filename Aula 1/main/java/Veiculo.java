@@ -16,12 +16,6 @@ public class Veiculo{
         return valorHora;
     }
 
-    /**
-     * @param valorHora the valorHora to set
-     */
-    public void setValorHora(double valorHora) {
-        this.valorHora = valorHora;
-    }
 
     /**
      * @return the valorDiaria
