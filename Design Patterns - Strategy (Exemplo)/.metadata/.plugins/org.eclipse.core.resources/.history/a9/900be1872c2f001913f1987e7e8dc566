@@ -1,0 +1,10 @@
+
+public class Moderado implements Investimentos {
+
+	@Override
+	public double realizaInvestimento() {
+		return 0.7;
+	}
+	
+
+}

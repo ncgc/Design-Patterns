@@ -1,0 +1,7 @@
+
+public class Conservador implements Investimentos{
+	public double realizaInvestimento(Conta conta) {
+		return conta.getValor() * 0.08;
+	}
+
+}

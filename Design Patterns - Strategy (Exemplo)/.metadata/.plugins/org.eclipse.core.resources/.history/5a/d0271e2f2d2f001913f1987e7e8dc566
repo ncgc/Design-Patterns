@@ -1,0 +1,12 @@
+
+public class Moderado implements Investimentos {
+
+	@Override
+	public double realizaInvestimento() {
+		boolean escolhido = new java.util.Random().nextDouble()> 0.5;
+		if(escolhido) return 0.025;
+		else return 0.7;
+	}
+	
+
+}

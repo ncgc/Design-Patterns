@@ -1,0 +1,16 @@
+
+public class Arrojado implements Investimentos{
+
+	@Override
+	public double realizaInvestimento() {
+		double escolhido = new java.util.Random().nextDouble();
+		if(escolhido < 0.3)
+			return 0.05;
+		else if(escolhido >= 0.3 && escolhido < 0.5)
+			return 0.03;
+		else 
+			return 0.006;
+		
+	}
+
+}

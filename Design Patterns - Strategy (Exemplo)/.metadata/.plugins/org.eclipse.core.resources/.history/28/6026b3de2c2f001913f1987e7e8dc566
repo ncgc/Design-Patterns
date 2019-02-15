@@ -1,0 +1,10 @@
+
+public class Arrojado implements Investimentos{
+
+	@Override
+	public double realizaInvestimento() {
+		return 0.6;
+		
+	}
+
+}
