@@ -1,8 +1,0 @@
-
-public class Conta {
-	public double valor;
-
-	public double getValor() {
-		return valor;
-	}
-}

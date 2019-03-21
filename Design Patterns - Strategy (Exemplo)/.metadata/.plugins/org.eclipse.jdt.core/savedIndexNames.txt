@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\natal\Documents\Alura\Design Patterns\.metadata\.plugins\org.eclipse.jdt.core
-2032926681.index
-2158312854.index

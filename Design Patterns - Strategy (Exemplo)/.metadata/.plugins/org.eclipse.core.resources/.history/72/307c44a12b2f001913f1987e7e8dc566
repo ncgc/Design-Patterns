@@ -1,5 +1,0 @@
-
-public class Conservador implements Investimentos{
-	double realizaInvestimento(Conta conta);
-
-}
