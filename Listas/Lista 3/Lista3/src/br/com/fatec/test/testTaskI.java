@@ -1,4 +1,4 @@
-package test;
+package br.com.fatec.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,12 +7,12 @@ import java.util.Arrays;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import br.com.fatec.Desconto;
-import br.com.fatec.DescontoDinheiro;
-import br.com.fatec.DescontoPorcentagem;
-import br.com.fatec.Produto;
-import br.com.fatec.ProdutoComposto;
-import br.com.fatec.ProdutoUnitario;
+import br.com.fatec.main.Desconto;
+import br.com.fatec.main.DescontoDinheiro;
+import br.com.fatec.main.DescontoPorcentagem;
+import br.com.fatec.main.Produto;
+import br.com.fatec.main.ProdutoComposto;
+import br.com.fatec.main.ProdutoUnitario;
 
 class testTaskI {
 

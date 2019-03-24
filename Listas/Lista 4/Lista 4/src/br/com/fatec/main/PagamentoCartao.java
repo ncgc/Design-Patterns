@@ -1,31 +1,25 @@
-package br.com.fatec;
+package br.com.fatec.main;
 
 
 public class PagamentoCartao extends Pagamento{
-	private String numeroCartao;
-	private String nomeTitular;
+	private Cartao cartao;
 	private int parcelas;
 	private Forma modo;
 	
 	
 	public PagamentoCartao(String bancoRecebimento, String bancoPagamento, Pagador pagador, String dataHora,
-			double valor, String numeroCartao, String nomeTitular, int parcelas) {
+			double valor, Cartao cartao, int parcelas) {
 		super(bancoRecebimento, bancoPagamento, pagador, dataHora, valor);
-		this.numeroCartao = numeroCartao;
-		this.nomeTitular = nomeTitular;
+		this.cartao = cartao;
 		this.parcelas = parcelas;
-	}
-
-	public String getNumeroCartao() {
-		return numeroCartao;
-	}
-
-	public String getNomeTitular() {
-		return nomeTitular;
 	}
 
 	public int getParcelas() {
 		return parcelas;
+	}
+	
+	public Cartao cartao() {
+		return cartao;
 	}
 	
 	public Forma isModo() {

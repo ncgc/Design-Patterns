@@ -1,4 +1,4 @@
-package br.com.fatec;
+package br.com.fatec.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +7,6 @@ import javax.xml.parsers.*;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -29,7 +28,6 @@ public class FileXML {
 			Document document = builder.parse(file);
 
 			NodeList list = document.getElementsByTagName("list");
-			Element root = document.getDocumentElement();
 
 			for(int i = 0; i < list.item(0).getChildNodes().getLength(); i++){
 				Element eElement = document.getDocumentElement();
@@ -44,6 +42,7 @@ public class FileXML {
 				if(eElement.getElementsByTagName("numeroCartao").item(i) != null) {
 					String numeroCartao = eElement.getElementsByTagName("numeroCartao").item(i).getTextContent();
 					String nomeTitular = eElement.getElementsByTagName("nomeTitular").item(i).getTextContent();
+					Cartao cartao = new Cartao(numeroCartao, nomeTitular);
 					int parcelas;
 					if(eElement.getElementsByTagName("parcelas").item(i) != null) {
 						parcelas =  Integer.valueOf(eElement.getElementsByTagName("parcelas").item(i).getTextContent());
@@ -51,7 +50,7 @@ public class FileXML {
 					else {
 						parcelas = 0;
 					}
-					pag = new PagamentoCartao(bancoRecebimento, bancoPagamento, pagador, dataHora, valor, numeroCartao, nomeTitular, parcelas);
+					pag = new PagamentoCartao(bancoRecebimento, bancoPagamento, pagador, dataHora, valor,cartao, parcelas);
 				}
 				else {
 					String numeroBoleto = eElement.getElementsByTagName("numeroBoleto").item(i).getTextContent();

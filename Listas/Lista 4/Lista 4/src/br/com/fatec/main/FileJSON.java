@@ -1,4 +1,4 @@
-package br.com.fatec;
+package br.com.fatec.main;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,13 +41,14 @@ public class FileJSON {
 					if(jO.containsKey("numeroCartao")) {
 						String numeroCartao = (String) jO.get("numeroCartao");
 						String nomeTitular = (String) jO.get("nomeTitular");
+						Cartao cartao = new Cartao(numeroCartao, nomeTitular);
 						int parcelas;
 						if(jO.containsKey("parcelas"))
 							parcelas = (int)(long) jO.get("parcelas");
 						else {
 							parcelas = 0;
 						}
-						pag = new PagamentoCartao(bancoRecebimento, bancoPagamento, pagador, dataHora, valor, numeroCartao, nomeTitular, parcelas);
+						pag = new PagamentoCartao(bancoRecebimento, bancoPagamento, pagador, dataHora, valor, cartao, parcelas);
 					}
 					else {
 						String numeroBoleto = (String) jO.get("numeroBoleto");

@@ -1,4 +1,4 @@
-package br.com.fatec;
+package br.com.fatec.main;
 
 public abstract class Template {
 	
