@@ -3,8 +3,8 @@ package financeiro;
 public class CotacaoSuino implements Cotacao{
 	private double valorCotacao;
 	
-	public CotacaoSuino(double valorCotacao) {
-		this.valorCotacao = valorCotacao;
+	public CotacaoSuino(double valorKilo) {
+		this.valorCotacao = valorKilo;
 	}
 
 	@Override

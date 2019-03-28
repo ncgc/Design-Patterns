@@ -1,17 +1,15 @@
 package vacinacao;
 
-import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class CartaoVacinacao {
+	private List<Vacina> vacinas;
+	private Date agendamento;
 	
-	private ArrayList<Vacina> vacinas;
+	
 
-	public CartaoVacinacao(int animal) {
-		this.vacinas = inicializaCartao();
-	}
-	
-	private ArrayList<Vacina> inicializaCartao() {
-		return null;
-	}
+
+
 	
 }

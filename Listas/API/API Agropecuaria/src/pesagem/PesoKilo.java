@@ -1,13 +1,14 @@
-package cadastro;
+package pesagem;
 
-public class PesoKilo{
+public class PesoKilo implements ConversorPeso{
 	private double pesoK;
 
-	public PesoKilo(double pesoA) {
-		this.pesoK = pesoA * 14.689;
+	public PesoKilo(double pesoK) {
+		this.pesoK = pesoK;
 	}
-	
-	public double pesoKilo() {
+
+	@Override
+	public double getPesoKilo() {
 		return pesoK;
 	}
 	

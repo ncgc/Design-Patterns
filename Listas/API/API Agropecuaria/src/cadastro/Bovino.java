@@ -1,24 +1,19 @@
 package cadastro;
 
-import java.util.Date;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import financeiro.CalculoPreco;
-import financeiro.Cotacao;
-import vacinacao.CartaoVacinacao;
+import financeiro.CotacaoBovino;
+import pesagem.ConversorPeso;
 
 public class Bovino extends Animal {
-	
-	private Cotacao cotacaoBovina;
-	
-	public Bovino(double peso, String raca, Genero genero, Date dataNascimento, Cotacao cotacaoBovina, CartaoVacinacao cv) {
-		super(peso, raca, genero, dataNascimento);
-		this.preco = setPreco();
-		this.cotacaoBovina = cotacaoBovina;
+	private RacaBovina raca;
+
+	public Bovino(ConversorPeso peso, Genero genero, String dataNascimento, RacaBovina raca, CotacaoBovino cotacao) {
+		super(peso, genero, dataNascimento, cotacao);
+		this.raca = raca;
+	}
+
+	public RacaBovina getRaca() {
+		return raca;
 	}
 	
-	private double setPreco() {
-		return new CalculoPreco(this, cotacaoBovina).valorVenda();
-	}
 
 }

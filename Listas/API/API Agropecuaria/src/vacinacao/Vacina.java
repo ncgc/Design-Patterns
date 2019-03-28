@@ -3,12 +3,10 @@ package vacinacao;
 public class Vacina {
 	private String descricao;
 	private boolean status;
-	private int animal;
 	
-	public Vacina(String descricao, boolean status, int animal) {
+	public Vacina(String descricao, boolean status) {
 		this.descricao = descricao;
 		this.status = status;
-		this.animal = animal;
 	}
 
 	public String getDescricao() {
@@ -25,14 +23,6 @@ public class Vacina {
 
 	public void setStatus(boolean status) {
 		this.status = status;
-	}
-
-	public int getAnimal() {
-		return animal;
-	}
-
-	public void setAnimal(int animal) {
-		this.animal = animal;
 	}
 	
 }

@@ -1,32 +1,61 @@
 package cadastro;
 
-import static cadastro.Animal.count;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import vacinacao.CartaoVacinacao;
+import financeiro.CalculoPreco;
+import financeiro.Cotacao;
+import pesagem.ConversorPeso;
 
-public class Animal implements Peso {
+public abstract class Animal {
 	public static final AtomicInteger count = new AtomicInteger(0);
-	private final int ID;
-	protected double peso;
-	protected String raca;
+	protected final int ID;
+	protected ConversorPeso peso;
 	protected Genero genero;
 	protected Date dataNascimento;
 	protected double preco;
+	protected Cotacao cotacao;
 	
-	public Animal(double peso, String raca, Genero genero, Date dataNascimento) {
+	
+	public Animal(ConversorPeso peso, Genero genero, String dataNascimento, Cotacao cotacao) {
 		this.ID = count.incrementAndGet();
 		this.peso = peso;
-		this.raca = raca;
 		this.genero = genero;
-		this.dataNascimento = dataNascimento;	
+		this.dataNascimento = setDataNascimento(dataNascimento);	
+		this.cotacao = cotacao;
+		this.preco = setPreco();
+	}
+	
+	public int getID() {
+		return ID;
 	}
 
-	@Override
-	public double getPeso() {
+	public Genero getGenero() {
+		return genero;
+	}
+	
+	public ConversorPeso getPeso() {
 		return peso;
+	}
+	
+	private double setPreco() {
+		return new CalculoPreco(this, cotacao).valorVenda();
+	}
+	
+	public double getPreco() {
+		return preco;
+	}
+	
+	private Date setDataNascimento(String data) {
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy-mm-dd");
+		try {
+			return formato.parse(data);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 }

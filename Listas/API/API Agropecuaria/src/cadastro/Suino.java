@@ -1,32 +1,19 @@
 package cadastro;
 
-import java.util.Date;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import financeiro.CalculoPreco;
-import financeiro.Cotacao;
+import financeiro.CotacaoSuino;
+import pesagem.ConversorPeso;
 
 public class Suino extends Animal{
-	private static final AtomicInteger count = new AtomicInteger(0);
-	private final int suinoID;
-	private Cotacao cotacaoSuina;
-	
+	private RacaSuina raca;
 
-	public Suino(double peso, String raca, Genero genero, Date dataNascimento, Cotacao cotacaoSuina) {
-		super(peso, raca, genero, dataNascimento);
-		suinoID = count.incrementAndGet();
-		this.preco = setPreco();
-		this.cotacaoSuina = cotacaoSuina;
+	public Suino(ConversorPeso peso, Genero genero, String dataNascimento, RacaSuina raca, CotacaoSuino cotacao) {
+		super(peso, genero, dataNascimento, cotacao);
+		this.raca = raca;
 	}
-	
-	public int getSuinoID() {
-		return suinoID;
+
+	public RacaSuina getRaca() {
+		return raca;
 	}
-	
-	public double setPreco() {
-		return new CalculoPreco(this, cotacaoSuina).valorVenda();
-	}
-	
-	
+
 
 }

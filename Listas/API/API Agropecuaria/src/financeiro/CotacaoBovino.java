@@ -9,7 +9,7 @@ public class CotacaoBovino implements Cotacao {
 
 	@Override
 	public double valorCotacao() {
-		return precoArroba;
+		return precoArroba/14.689;
 	}
 
 }

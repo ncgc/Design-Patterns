@@ -1,7 +1,8 @@
-package cadastro;
+package pesagem;
 
-public interface Peso {
+public interface ConversorPeso {
 	
-	public double getPeso();
+	public double getPesoKilo();
+	
 
 }

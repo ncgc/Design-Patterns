@@ -1,6 +1,7 @@
 package financeiro;
 
 import cadastro.Animal;
+import pesagem.ConversorPeso;
 
 public class CalculoPreco {
 	private Animal animal;
@@ -12,7 +13,7 @@ public class CalculoPreco {
 	}
 	
 	public double valorVenda() {
-		return cotacao.valorCotacao() * animal.getPeso();
+		ConversorPeso peso = animal.getPeso();
+		return peso.getPesoKilo() * cotacao.valorCotacao();
 	}
-
 }
