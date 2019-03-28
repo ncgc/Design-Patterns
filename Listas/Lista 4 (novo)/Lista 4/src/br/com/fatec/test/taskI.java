@@ -110,9 +110,8 @@ class taskI {
 		ArrayList<Pagamento> pagamentos = xml.recuperarPagamento();
 		int fim = pagamentos.size()-1;
 		
-		Pagador pagadori = new Pagador("Adelaide Carvalhaes","56608514522");
-		Cartao cartaoi = new Cartao("98315792", "LIEDSON LAGO");
-		Pagamento pi = new PagamentoCartao("Caixa Econômica","Banco Safra", pagadori,"2018-09-02 02:58:10.96 UTC", 362.4101749037519,cartaoi, 2);
+		Pagador pagadori = new Pagador("Sandoval Félix","87478000207");
+		Pagamento pi = new PagamentoBoleto("Banco do Brasil","Bradesco", pagadori,"2018-09-02 02:58:10.96 UTC", 328.8093068652568, "88604651");
 		
 		Pagador pagadorf = new Pagador("Viriato Ayres","52147655106");
 		Cartao cartaof = new Cartao("56555327", "LAÍS FELGUEIRAS");
