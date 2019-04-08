@@ -1,31 +1,37 @@
 package cadastro;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import org.joda.time.DateTimeZone;
+import org.joda.time.LocalDate;
+import org.joda.time.Months;
 
 import financeiro.CalculoPreco;
 import financeiro.Cotacao;
 import pesagem.ConversorPeso;
+import vacinacao.CartaoVacinacao;
+import vacinacao.ItemCartaoVacinacao;
 
 public abstract class Animal {
 	public static final AtomicInteger count = new AtomicInteger(0);
 	protected final int ID;
 	protected ConversorPeso peso;
 	protected Genero genero;
-	protected Date dataNascimento;
+	protected LocalDate dataNascimento;
 	protected double preco;
 	protected Cotacao cotacao;
+	protected ArrayList<ItemCartaoVacinacao> cartaoVacinacao;
 	
-	
-	public Animal(ConversorPeso peso, Genero genero, String dataNascimento, Cotacao cotacao) {
+	public Animal(ConversorPeso peso, Genero genero, int ano, int mes, int dia , Cotacao cotacao) {
 		this.ID = count.incrementAndGet();
 		this.peso = peso;
 		this.genero = genero;
-		this.dataNascimento = setDataNascimento(dataNascimento);	
+		this.dataNascimento = new LocalDate(ano, mes, dia);	
 		this.cotacao = cotacao;
 		this.preco = setPreco();
+		this.cartaoVacinacao = new CartaoVacinacao(this).getPlanoVacinacao();
+		
 	}
 	
 	public int getID() {
@@ -47,15 +53,29 @@ public abstract class Animal {
 	public double getPreco() {
 		return preco;
 	}
-	
-	private Date setDataNascimento(String data) {
-		SimpleDateFormat formato = new SimpleDateFormat("yyyy-mm-dd");
-		try {
-			return formato.parse(data);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return null;
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
 	}
+
+	public static AtomicInteger getCount() {
+		return count;
+	}
+
+	public Cotacao getCotacao() {
+		return cotacao;
+	}
+
+	public ArrayList<ItemCartaoVacinacao> getCartaoVacinacao() {
+		return cartaoVacinacao;
+	}
+
+	public int getIdade() {
+		LocalDate agora = new LocalDate().now(DateTimeZone.UTC);
+		return Months.monthsBetween(agora, dataNascimento).getMonths();
+	}
+	
+	
+
 	
 }
