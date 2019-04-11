@@ -1,5 +1,5 @@
 package test;
-/*
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
@@ -18,13 +18,13 @@ import financeiro.CotacaoSuino;
 import pesagem.PesoArroba;
 import pesagem.PesoKilo;
 
-class testFinanceiro {
+class testCotacao {
 
 	@Test
 	@DisplayName("Deve calcular a cotacao de um boi com peso em kilos")
 	void test1() {
 		Cotacao c =  new CotacaoBovino(153.00);
-		Animal boi =  new Bovino(new PesoKilo(90), Genero.FEMEA, "2018-11-15", RacaBovina.GELBVIEH, (CotacaoBovino) c);
+		Animal boi =  new Bovino(new PesoKilo(90), Genero.FEMEA, 2018, 11 ,12 , c, RacaBovina.GELBVIEH);
 		CalculoPreco cp = new CalculoPreco(boi, c);
 		
 		assertEquals(937.436,cp.valorVenda(), 0.001);	
@@ -34,18 +34,18 @@ class testFinanceiro {
 	@DisplayName("Deve calcular a cotacao de um boi com peso em arrobas")
 	void test2() {
 		Cotacao c =  new CotacaoBovino(153.00);
-		Animal boi =  new Bovino(new PesoArroba(5), Genero.FEMEA, "2018-11-15", RacaBovina.GELBVIEH, (CotacaoBovino) c);
+		Animal boi =  new Bovino(new PesoArroba(5), Genero.FEMEA, 2018, 11 ,15, c, RacaBovina.GELBVIEH);
 		CalculoPreco cp = new CalculoPreco(boi, c);
 		
 		assertEquals(765, cp.valorVenda(), 0.001);
 	}
-
+	
 	
 	@Test
 	@DisplayName("Deve calcular a cotacao de um porco com peso em kilos")
 	void test3() {
 		Cotacao c = new CotacaoSuino(4.29);
-		Animal porco = new Suino(new PesoKilo(7), Genero.MACHO, "2018-12-14", RacaSuina.LARGEWHITE, (CotacaoSuino) c);
+		Animal porco = new Suino(new PesoKilo(7), Genero.MACHO, 2018, 12, 14, c, RacaSuina.LARGEWHITE);
 		CalculoPreco cp = new CalculoPreco(porco, c);
 		
 		assertEquals(30.03, cp.valorVenda(), 0.001);
@@ -55,11 +55,9 @@ class testFinanceiro {
 	@DisplayName("Deve calcular a cotacao de um porco com peso em arrobas")
 	void test4() {
 		Cotacao c = new CotacaoSuino(4.29);
-		Animal porco = new Suino(new PesoArroba(0.47), Genero.MACHO, "2018-12-14", RacaSuina.LARGEWHITE, (CotacaoSuino) c);
+		Animal porco = new Suino(new PesoArroba(0.47), Genero.MACHO, 2018, 12, 14, c, RacaSuina.LARGEWHITE);
 		CalculoPreco cp = new CalculoPreco(porco, c);
 		
 		assertEquals(29.617, cp.valorVenda(), 0.001);
-		
 	}
 }
-*/

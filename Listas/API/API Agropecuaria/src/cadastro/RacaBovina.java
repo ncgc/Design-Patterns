@@ -1,5 +1,9 @@
 package cadastro;
 
+/**
+ * @author natalia
+ * Lista de raças bovinas
+ */
 public enum RacaBovina {
 	HOLSTEINFRISIA,
 	JERSEY,

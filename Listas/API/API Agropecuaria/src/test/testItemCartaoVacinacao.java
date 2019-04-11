@@ -51,7 +51,7 @@ class testItemCartaoVacinacao {
 		ArrayList<LocalDate> limiteAplicacao = icv.getPrazoAplicacao();
 		
 		assertEquals(new LocalDate(2020,1,22), limiteAplicacao.get(0));	
-		assertEquals(15, limiteAplicacao.size());
+		assertEquals(14, limiteAplicacao.size());
 	}
 	
 
@@ -61,9 +61,9 @@ class testItemCartaoVacinacao {
 		
 		ArrayList<Status> statusAplicacao = icv.getStatus();
 		
-		assertEquals(15, statusAplicacao.size());
+		assertEquals(14, statusAplicacao.size());
 		assertEquals(Status.AGENDAMENTO_PENDENTE, statusAplicacao.get(0));
-		assertEquals(Status.AGENDAMENTO_PENDENTE, statusAplicacao.get(14));
+		assertEquals(Status.AGENDAMENTO_PENDENTE, statusAplicacao.get(13));
 	}
 	
 

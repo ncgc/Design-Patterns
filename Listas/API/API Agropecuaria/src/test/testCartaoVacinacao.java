@@ -7,8 +7,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import cadastro.Animal;
 import cadastro.Bovino;
@@ -16,10 +14,8 @@ import cadastro.Genero;
 import cadastro.RacaBovina;
 import cadastro.RacaSuina;
 import cadastro.Suino;
-import financeiro.Cotacao;
 import financeiro.CotacaoBovino;
 import financeiro.CotacaoSuino;
-import pesagem.ConversorPeso;
 import pesagem.PesoKilo;
 import vacinacao.ItemCartaoVacinacao;
 import vacinacao.Vacinacao;

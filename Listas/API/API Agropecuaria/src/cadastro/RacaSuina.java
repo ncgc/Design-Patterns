@@ -1,5 +1,9 @@
 package cadastro;
 
+/**
+ * @author natalia
+ * Lista de raças suínas
+ */
 public enum RacaSuina {
 	LANDRACE,
 	LARGEWHITE, 
