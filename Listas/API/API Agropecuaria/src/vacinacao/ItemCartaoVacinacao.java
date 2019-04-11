@@ -8,9 +8,9 @@ import cadastro.Animal;
 
 /**
  * @author natalia 
- * Realiza o controle de vacinacao para cada uma das vacinas que o animal 
- * deverá tomar ao longo de sua vida. 
- * @
+ * Realiza o controle de vacinacao para cada uma das efermidades que o animal 
+ * estará suceptível a fim de manter sua saúde, segundo as regulamentações da Anvisa. 
+ * @see Vacinacao
  */
 public class ItemCartaoVacinacao {
 	private Animal animal;
@@ -21,9 +21,11 @@ public class ItemCartaoVacinacao {
 	private ArrayList<Status> statusAplicacao;
 	
 	/**
-	 * @param animal	animal a que o item de vacinacao está associado;
-	 * @param vacinacao	doença indicada pela anvisa como obrigatória;
-	 * 
+	 * @param animal			animal a que o item de vacinacao está associado;
+	 * @param vacinacao			identificação da efermidade tratada;
+	 * @param dataAgendamento 	data agendada para a aplicação da vacina
+	 * @param prazoAplicacao 	prazo recomendado para a aplicação da vacina
+	 * @param dataAplicacao 	data em que a vacina foi aplicada no animal
 	 */
 	public ItemCartaoVacinacao(Animal animal, Vacinacao vacinacao) {
 		this.animal = animal;
@@ -148,7 +150,7 @@ public class ItemCartaoVacinacao {
 	 * Atualiza o status de agendamento quanto a vacinação.
 	 * Se a data de agendamento for superior a data recomendada para aplicacao,
 	 * o status mudará para VENCIDA. Do contrário, o status passará para AGENDADA.
-	 * Existe uma tolerância de um mês de atraso. 
+	 * Existe a tolerância de um mês de atraso. 
 	 * 
 	 * @param indice indica qual a dose da vacinação está se referindo;
 	 * @param data	data de agendamento
@@ -203,12 +205,15 @@ public class ItemCartaoVacinacao {
 	}
 	
 	/**
-	 * 
 	 * @return todas as datas de aplicaçoes das vacinas
 	 */
 	public ArrayList<LocalDate> getDataAplicacao(){
 		return this.dataAplicacao;
 	}
+	
+	/**
+	 * @return retorna os dados da efermidade tratada
+	 */
 	
 	public Vacinacao getVacinacao() {
 		return vacinacao;

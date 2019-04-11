@@ -23,5 +23,17 @@ class testPeso {
 		PesoArroba pa = new PesoArroba(6);
 		assertEquals(pa.getPesoKilo(),88.134, 0.001);
 	}
+	
+	@Test
+	@DisplayName("Deve retornar o peso em Arrobas")
+	void test3() {
+		
+	}
 
+	@Test
+	@DisplayName("Deve convertes o peso em Arrobas")
+	void test4() {
+		
+	}
+	
 }

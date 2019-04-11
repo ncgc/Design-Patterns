@@ -20,7 +20,7 @@ public class Vacinacao {
 	
 	
 	/**
-	 * @param Doença nome da doença para qual uma vacina deverá ser aplicada;
+	 * @param Doença 	nome da doença para qual uma vacina deverá ser aplicada;
 	 * 
 	 * @param intervaloAplicacao	intervalo em meses em que uma dose deverá ser aplicada (em meses)
 	 * 					 			por padrão é 12 meses (anual);

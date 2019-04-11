@@ -8,6 +8,8 @@ import cadastro.Suino;
 
 /**
  * @author natalia
+ * Mantém registros de vacinação de um animal
+ * @see ItemCartaoVacinacao
  */
 public class CartaoVacinacao {
 	private ArrayList<ItemCartaoVacinacao> planoVacinacao;
@@ -30,7 +32,7 @@ public class CartaoVacinacao {
 	}
 	/**
 	 * Seleciona dentre a lista de vacinação obrigatória do tipo de animal (bovino/suíno)
-	 * aquelas que devem ser aplicadas ao gênero de uma animal específico (fêmea, macho).
+	 * aquelas que devem ser aplicadas, considerando o gênero de um animal (fêmea, macho).
 	 */
 	private void setVacinasObrigatorias() {
 		if(animal instanceof Bovino) {

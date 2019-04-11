@@ -11,5 +11,12 @@ public class PesoKilo implements ConversorPeso{
 	public double getPesoKilo() {
 		return pesoK;
 	}
+
+	@Override
+	public double getPesoArroba() {
+		return pesoK/14.689;
+	}
+	
+	
 	
 }

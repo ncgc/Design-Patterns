@@ -3,6 +3,11 @@ package vacinacao;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author natalia
+ * Lista o esquema de vacinação das principais doenças infecciosas
+ * de suinos controladas por vacinação no Brasil segundo a Anvisa.
+ */
 public class VacinacaoSuina {
 	private List<Vacinacao> anvisa;
 	private static VacinacaoSuina uniqueInstance;
@@ -63,6 +68,10 @@ public class VacinacaoSuina {
 	public  void  removeVacinacao(Vacinacao v) {
 		if(anvisa.contains(v)) anvisa.remove(v);
 	}
+	
+	/**
+	 * @return retorna a lista com vacinação obrigatória
+	 */
 	
 	public List<Vacinacao> getAnvisa(){
 		return anvisa;

@@ -112,6 +112,10 @@ public class VacinacaoBovina {
 		if(anvisa.contains(v)) anvisa.remove(v);
 	}
 	
+	/**
+	 * @return retorna a lista com vacinação obrigatória
+	 */
+	
 	public List<Vacinacao> getAnvisa(){
 		return anvisa;
 	}

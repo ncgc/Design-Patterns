@@ -12,5 +12,10 @@ public class PesoArroba implements ConversorPeso {
 		return pesoA * 14.689;
 	}
 
+	@Override
+	public double getPesoArroba() {
+		return pesoA;
+	}
+
 		
 }
