@@ -1,8 +1,8 @@
 package test;
-/*
+
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
+
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
@@ -16,56 +16,55 @@ import cadastro.RacaSuina;
 import cadastro.Suino;
 import financeiro.CotacaoBovino;
 import financeiro.CotacaoSuino;
-import main.Rebanho;
-import pesagem.PesoArroba;
+import main.Fazenda;
 import pesagem.PesoKilo;
 
 class testMain {
-	Animal b1 = new Bovino(new PesoKilo(95), Genero.FEMEA, "2019-01-22", RacaBovina.ANGUS, new CotacaoBovino(153.00));
-	Animal b2 = new Bovino(new PesoArroba(5), Genero.MACHO, "2018-12-31", RacaBovina.HIGHLAND, new CotacaoBovino(142.00));
-	Animal b3 = new Bovino(new PesoArroba(4.7), Genero.MACHO, "2018-12-31", RacaBovina.HIGHLAND, new CotacaoBovino(142.00));
+	Animal vaca = new Bovino(new PesoKilo(95), Genero.FEMEA, 2019,1,22, new CotacaoBovino(153.00), RacaBovina.ANGUS);
+	Animal boi = new Bovino(new PesoKilo(110), Genero.MACHO, 2017,1,22, new CotacaoBovino(153.00), RacaBovina.HIGHLAND);
+	Animal boi2 = new Bovino(new PesoKilo(100), Genero.MACHO, 2017,1,22, new CotacaoBovino(173.00), RacaBovina.BEEFMASTER);
 	
-	Animal p1 = new Suino(new PesoKilo(8), Genero.FEMEA, "2019-02-05", RacaSuina.HAMPSHIRE, new CotacaoSuino(5.00));
-	Animal p2 = new Suino(new PesoKilo(7.5), Genero.FEMEA, "2019-01-15", RacaSuina.CANASTRA, new CotacaoSuino(3.89));
+	Animal porco1 = new Suino(new PesoKilo(8), Genero.FEMEA, 2019, 02, 02, new CotacaoSuino(5.00), RacaSuina.HAMPSHIRE);
+	Animal porco2 = new Suino(new PesoKilo(8), Genero.FEMEA, 2018, 02, 02, new CotacaoSuino(5.00), RacaSuina.HAMPSHIRE);
+	Animal porco3 = new Suino(new PesoKilo(7), Genero.MACHO, 2018, 12, 14, new CotacaoSuino(4.3), RacaSuina.LARGEWHITE);
+	Animal porco4 = new Suino(new PesoKilo(2), Genero.FEMEA, 2019, 04, 02, new CotacaoSuino(2.00), RacaSuina.NILOCANASTRA);
+	
+	Fazenda f = Fazenda.getInstance();
 	
 	@Disabled
 	@Test
 	@DisplayName("Deve retornar a quantidade total de animais cadastrados")
 	void test() {
-		assertEquals(3, bovino.qtdAnimais());
-		assertEquals(2, suino.qtdAnimais());
+		assertEquals(3, f.getRebanhoBovino());
+		assertEquals(2, f.getRebanhoSuino());
 	}
+	
 	@Disabled
 	@Test
 	@DisplayName("Deve retornar a quantidade de animais fêmeas")
 	void test1() {
-		assertEquals(2, suino.qtdFemeas());
-		assertEquals(1, bovino.qtdFemeas());
+		
 	}
 	
 	@Disabled
 	@Test
 	@DisplayName("Deve retornar a quantidade de animais machos")
 	void test2() {
-		assertEquals(2, bovino.qtdMachos());
-		assertEquals(0, suino.qtdMachos());
+		
 	}
 	
 	@Disabled
 	@Test
 	@DisplayName("Deve retornar o peso total dos animais")
 	void test3() {
-		assertEquals(237.483, bovino.pesoTotal(), 0.001);
-		assertEquals(15.5, suino.pesoTotal(), 0.001);
+		
 	}
 	
 	@Test
 	@DisplayName("Deve retornar o preço do rebanho")
 	void test4() {
-		assertEquals(2366.916, bovino.valorRebanho(), 0.001);
-		assertEquals(69.175, suino.valorRebanho(), 0.001);
+		
 	}
 	
-	
 }
-*/
+

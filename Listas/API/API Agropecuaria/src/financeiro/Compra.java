@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.joda.time.LocalDate;
+
 import cadastro.Animal;
 import cadastro.Bovino;
 import cadastro.Suino;
@@ -12,13 +14,13 @@ import main.Rebanho;
 
 public class Compra {
 	private Rebanho rebanhoComprado;
-	private Date dataCompra;
+	private LocalDate dataCompra;
 	private double valorCompra;
 	private Fazenda fazenda;
 	
-	public Compra(Rebanho rebanhoComprado, Date dataCompra, Fazenda fazenda) {
+	public Compra(Rebanho rebanhoComprado, int ano, int mes, int dia, Fazenda fazenda) {
 		this.rebanhoComprado = rebanhoComprado;
-		this.dataCompra = dataCompra;
+		this.dataCompra = new LocalDate(ano, mes, dia);	
 		this.valorCompra = rebanhoComprado.valorRebanho();
 		this.fazenda = fazenda;
 		atualizarRebanho();
@@ -45,7 +47,7 @@ public class Compra {
 		return rebanhoComprado;
 	}
 
-	public Date getDataCompra() {
+	public LocalDate getDataCompra() {
 		return dataCompra;
 	}
 

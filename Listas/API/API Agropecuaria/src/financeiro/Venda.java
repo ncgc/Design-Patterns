@@ -1,8 +1,9 @@
 package financeiro;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+
+import org.joda.time.LocalDate;
 
 import cadastro.Animal;
 import cadastro.Bovino;
@@ -12,12 +13,12 @@ import main.Rebanho;
 
 public class Venda  {
 	private Rebanho rebanhoVendido;
-	private Date dataVenda;
+	private LocalDate dataVenda;
 	private double valorVenda;
 	private Fazenda fazenda;
 	
-	public Venda(Rebanho rebanho, Date dataVenda, Fazenda fazenda) {
-		this.dataVenda = dataVenda;
+	public Venda(Rebanho rebanho, int ano, int mes, int dia, Fazenda fazenda) {
+		this.dataVenda = new LocalDate(ano, mes, dia);
 		this.valorVenda = rebanhoVendido.valorRebanho();
 		this.fazenda = fazenda.getInstance();
 		validaVenda(rebanho);
@@ -72,13 +73,12 @@ public class Venda  {
 		return rebanhoVendido;
 	}
 
-	public Date getDataVenda() {
+	public LocalDate getDataVenda() {
 		return dataVenda;
 	}
 
 	public double getValorVenda() {
 		return valorVenda;
 	}
-	
 	
 }

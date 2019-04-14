@@ -48,7 +48,7 @@ public class Rebanho {
 	}
 	
 	public double valorRebanho() {
-		int count = 0;
+		double count = 0;
 		for(Animal a: animais) {
 			count += a.getPreco();
 		}

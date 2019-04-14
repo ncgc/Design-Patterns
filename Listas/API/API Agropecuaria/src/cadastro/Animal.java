@@ -102,6 +102,13 @@ public abstract class Animal {
 		LocalDate agora = new LocalDate().now(DateTimeZone.UTC);
 		return Months.monthsBetween(agora, dataNascimento).getMonths();
 	}
+
+	/**
+	 * @return preco de venda do animal 
+	 */
+	public double getPreco() {
+		return preco;
+	}
 	
 	
 
