@@ -11,21 +11,39 @@ import vacinacao.ItemCartaoVacinacao;
 import vacinacao.Status;
 import vacinacao.Vacinacao;
 
+/**
+ * @author natalia
+ * Classe para agrupamento de um conjunto de animais de um mesmo tipo 
+ * do qual se deseja informações da população 
+ */
 public class Rebanho {
 	private ArrayList<Animal> animais;
 	
+	/**
+	 * @param animais animais pertencentes ao rebanho
+	 */
 	public Rebanho(ArrayList<Animal> animais) {
 		this.animais = animais;
 	}
 
+	/**
+	 * @return lista do conjunto de animais do rebanho
+	 */
 	public List<Animal> getAnimais() {
 		return animais;
 	}
 	
+	/**
+	 * @return quantidade de aniamis pertencentes ao rebanho
+	 */
 	public int qtdAnimais() {
 		return animais.size();
 	}
 	
+	/**
+	 * @param g 	gênero do animal (macho/fêmea)
+	 * @return		quantidade de animais do rebanho que possuem o mesmo gênero especificado
+	 */
 	public int calculaGenero(Genero g) {
 		int count = 0;
 		for(Animal a: animais) {
@@ -34,6 +52,9 @@ public class Rebanho {
 		return count;	
 	}
 	
+	/**
+	 * @return soma dos pesos dos animais pertencente ao rebanho (em kilos)
+	 */
 	public double pesoTotalKg() {
 		int count = 0;
 		for(Animal a: animais) { 
@@ -43,11 +64,18 @@ public class Rebanho {
 		return count;
 	}
 	
+	/**
+	 * 
+	 * @return soma dos pesos dos animais pertencente ao rebanho (em arrobas)
+	 */
 	public double pesoTotalArroba() {
 		ConversorPeso peso = new PesoKilo(pesoTotalKg());
 		return peso.getPesoArroba();
 	}
 	
+	/**
+	 * @return soma dos valores dos animais pertencentes ao rebanho
+	 */
 	public double valorRebanho() {
 		double count = 0;
 		for(Animal a: animais) {
@@ -56,6 +84,10 @@ public class Rebanho {
 		return count;
 	}
 	
+	/**
+	 * @param doenca	nome da zoonose a ser pesquisada
+	 * @return			percentual, em decimais, do total de animais de um rebanho vacinados para essa zoonose.
+	 */
 	public double percentualVacinado(String doenca) {
 		int count = 0;
 		for(Animal a: animais) {
@@ -74,15 +106,24 @@ public class Rebanho {
 		return count/animais.size();
 	}
 	
+	/**
+	 * @param doenca	nome da zoonose a ser pesquisada
+	 * @return			percentual, em decimais, do total de animais de um rebanho não vacinados para essa zoonose.
+	 */
 	public double percentualNaoVacinado(String doenca) {
 		return 1 - percentualVacinado(doenca);
 	}
 
-
+	/**
+	 * @param rebanhoComprado inclusão ao rebanho dos animais comprados
+	 */
 	public void addRebanho(List<Animal> rebanhoComprado) {
 		animais.addAll(rebanhoComprado);
 	}
 	
+	/**
+	 * @param rebanhoVendido remoção do rebanho dos animais vendidos
+	 */
 	public void removeRebanho(List<Animal> rebanhoVendido) {
 		animais.removeAll(rebanhoVendido);
 	}

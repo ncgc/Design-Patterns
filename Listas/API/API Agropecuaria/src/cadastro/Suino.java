@@ -6,7 +6,8 @@ import pesagem.ConversorPeso;
 
 /**
  * @author natalia
- * Cadastro de animais suinos
+ * Cadastro de animais suinos com a adição de uma raça as características
+ * básicas dos animais.
  * @see Animal
  */
 public class Suino extends Animal{

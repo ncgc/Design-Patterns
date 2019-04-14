@@ -1,5 +1,9 @@
 package financeiro;
 
+/**
+ * @author natalia
+ * Valor de cotação, considerando a unidade de peso kilo como oficial. 
+ */
 public class CotacaoSuino implements Cotacao{
 	private double valorCotacao;
 	

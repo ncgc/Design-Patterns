@@ -6,7 +6,8 @@ import pesagem.ConversorPeso;
 
 /**
  * @author natalia
- * Cadastro de animais bovinos
+ * Cadastro de animais bovinos com a adição de uma raça as características
+ * básicas dos animais.
  * @see Animal
  */
 public class Bovino extends Animal {

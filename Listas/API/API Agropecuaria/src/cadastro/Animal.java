@@ -15,7 +15,8 @@ import vacinacao.ItemCartaoVacinacao;
 
 /**
  * @author natalia
- * Cadastro de animais 
+ * Classe abstrata que permite o cadastro de qualquer animal 
+ * considerando todos os itens que eles possuem em comum. 
  */
 public abstract class Animal {
 	public static final AtomicInteger count = new AtomicInteger(0);
@@ -104,7 +105,7 @@ public abstract class Animal {
 	}
 
 	/**
-	 * @return preco de venda do animal 
+	 * @return preço de venda do animal 
 	 */
 	public double getPreco() {
 		return preco;
