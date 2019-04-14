@@ -19,8 +19,8 @@ public class Venda  {
 	
 	public Venda(Rebanho rebanho, int ano, int mes, int dia, Fazenda fazenda) {
 		this.dataVenda = new LocalDate(ano, mes, dia);
-		this.valorVenda = rebanhoVendido.valorRebanho();
 		this.fazenda = fazenda.getInstance();
+		this.valorVenda = 0;
 		validaVenda(rebanho);
 	}
 	
@@ -32,6 +32,7 @@ public class Venda  {
 		}
 		if(rebanhoVendido.getAnimais().isEmpty()) {}
 		else {
+			this.valorVenda = rebanhoVendido.valorRebanho();
 			atualizarRebanho();
 			atualizarHistorico();
 		}

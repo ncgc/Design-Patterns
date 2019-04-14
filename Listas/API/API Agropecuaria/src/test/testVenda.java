@@ -71,18 +71,61 @@ class testVenda {
 	@Test
 	@DisplayName("Venda bovino não existente")
 	void test2() {
-		fail("Not yet implemented");
+		Animal vaca2 = new Bovino(new PesoKilo(90), Genero.FEMEA, 2017,1,22, new CotacaoBovino(120.00), RacaBovina.CHIANINA);
+		ArrayList<Animal> b = new ArrayList<Animal>();
+		b.addAll(Arrays.asList(vaca2));
+		Rebanho rebanhoVendido = new Rebanho(b);
+		Venda v = new Venda(rebanhoVendido, 2019,02,02, f);
+		
+		List<Venda> historico = f.getHistoricoVenda();
+		List<Animal> fBovino = f.getRebanhoBovino().getAnimais();
+		List<Animal> fSuino = f.getRebanhoSuino().getAnimais();
+		
+		assertTrue(historico.size()>0);
+		assertFalse(historico.contains(v));
+		assertEquals(1, fBovino.size());
+		assertEquals(2, fSuino.size());
+		assertEquals(0.00, v.getValorVenda());
 	}
+	
 	@Test
 	@DisplayName("Venda suino existente")
 	void test3() {
-		fail("Not yet implemented");
+		ArrayList<Animal> s = new ArrayList<Animal>();
+		s.addAll(Arrays.asList(porco1));
+		Rebanho rebanhoVendido = new Rebanho(s);
+		Venda v = new Venda(rebanhoVendido, 2019,02,02, f);
+		
+		List<Venda> historico = f.getHistoricoVenda();
+		List<Animal> fBovino = f.getRebanhoBovino().getAnimais();
+		List<Animal> fSuino = f.getRebanhoSuino().getAnimais();
+		
+		assertTrue(historico.size()>0);
+		assertTrue(historico.contains(v));
+		assertEquals(1, fBovino.size());
+		assertEquals(1, fSuino.size());
+		assertEquals(40.00,v.getValorVenda(),0.01);
+		
 	}
 	
 	@Test
 	@DisplayName("Venda suino inexistente")
 	void test4() {
-		fail("Not yet implemented");
+		Animal porco4 = new Suino(new PesoKilo(2), Genero.MACHO, 2019, 01, 14, new CotacaoSuino(4.3), RacaSuina.DUROCJERSEY);
+		ArrayList<Animal> s = new ArrayList<Animal>();
+		s.addAll(Arrays.asList(porco4));
+		Rebanho rebanhoVendido = new Rebanho(s);
+		Venda v = new Venda(rebanhoVendido, 2019,02,02, f);
+		
+		List<Venda> historico = f.getHistoricoVenda();
+		List<Animal> fBovino = f.getRebanhoBovino().getAnimais();
+		List<Animal> fSuino = f.getRebanhoSuino().getAnimais();
+		
+		assertTrue(historico.size()>0);
+		assertFalse(historico.contains(v));
+		assertEquals(1, fBovino.size());
+		assertEquals(1, fSuino.size());
+		assertEquals(0,v.getValorVenda(),0.01);
 	}
 	
 }

@@ -66,6 +66,11 @@ public class Fazenda {
 		}
 	}
 	
+	public double getPesoTotal(Rebanho r, String unPeso) {
+		if(unPeso.toLowerCase().equals("kilo"))
+			return r.pesoTotalKg();
+		return r.pesoTotalArroba();
+	}
 	
 	//Administração financeira
 	public double valorAtivo() {

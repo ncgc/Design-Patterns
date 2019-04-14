@@ -8,6 +8,7 @@ import cadastro.Genero;
 import pesagem.ConversorPeso;
 import pesagem.PesoKilo;
 import vacinacao.ItemCartaoVacinacao;
+import vacinacao.Status;
 import vacinacao.Vacinacao;
 
 public class Rebanho {
@@ -64,7 +65,9 @@ public class Rebanho {
 				doenca = doenca.toLowerCase();
 				String vDoenca = vItem.getDoença().toLowerCase();
 				if(vDoenca.equals(doenca)) {
-					count += 1;
+					if(item.getStatus().equals(Status.APLICADA)){
+						count+=1;
+					}
 				}
 			}
 		}
